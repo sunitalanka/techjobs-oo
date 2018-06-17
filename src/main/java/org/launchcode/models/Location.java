@@ -1,12 +1,16 @@
 package org.launchcode.models;
 
+import static org.launchcode.models.JobFieldType.LOCATION;
+
 /**
  * Created by LaunchCode
  */
 public class Location extends JobField {
 
-    public Location(String value) {
-        super(value);
+    public Location(String value)
+    {
+        //super(value);
+        super(value, LOCATION);
     }
 
 }

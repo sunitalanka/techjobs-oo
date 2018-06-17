@@ -58,11 +58,11 @@ public class JobDataImporter {
                     jobData.getEmployers().add(emp);
                 }
 
-                Location loc = jobData.getLocations().findByValue(locStr);
-                if (loc == null) {
-                    loc = new Location(locStr);
-                    jobData.getLocations().add(loc);
-                }
+                //Location loc = jobData.getLocations().findByValue(locStr);
+                //if (loc == null) {
+                   // loc = new Location(locStr);
+                    //jobData.getLocations().add(loc);
+               // }
 
                 PositionType posType = jobData.getPositionTypes().findByValue(posTypeStr);
                 if (posType == null) {
@@ -74,6 +74,12 @@ public class JobDataImporter {
                 if (coreComp == null) {
                     coreComp = new CoreCompetency(coreCompStr);
                     jobData.getCoreCompetencies().add(coreComp);
+                }
+
+                Location loc = jobData.getLocations().findByValue(locStr);
+                if (loc == null) {
+                    loc = new Location(locStr);
+                    jobData.getLocations().add(loc);
                 }
 
                 Job newJob = new Job(record.get("name"), emp, loc, posType, coreComp);

@@ -8,6 +8,10 @@ public class JobField {
     private String value;
     private int id;
     private static int nextId = 1;
+    private static int empNextId = 1;
+    private static int locNextId = 1;
+    private static int posNextId = 1;
+    private static int corCompNextId = 1;
 
     public JobField() {
         id = nextId;
@@ -17,6 +21,28 @@ public class JobField {
     public JobField(String aValue) {
         this();
         value = aValue;
+
+    }
+
+    public JobField(String aValue, JobFieldType type) {
+        value = aValue;
+        switch(type) {
+            case EMPLOYER:
+                id = empNextId;
+                empNextId++;
+                break;
+                case LOCATION: id = locNextId;
+                locNextId++;
+                break;
+                case POSITION_TYPE:
+                    id = posNextId;
+                    posNextId++;
+                    break;
+                    case CORE_COMPETENCY:
+                        id = corCompNextId;
+                        corCompNextId++;
+                        break;
+        }
     }
 
     public boolean contains(String value) {
