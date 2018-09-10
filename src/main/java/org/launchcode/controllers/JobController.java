@@ -56,8 +56,16 @@ public class JobController {
             model.addAttribute("job", job);
             model.addAttribute("id", job.getId());
 
+            Job newJob = new Job();
+            return "job-detail";
 
+        } else {
+            errors.rejectValue( "name","job.name","");
+            return "new-job";
         }
-        return "job-detail";
+
+
     }
+
 }
+
